@@ -1,10 +1,7 @@
 package com.example.SoyBank.api.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,7 +9,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @Entity
-@Table(name = "user")
+@Table(name = "card_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

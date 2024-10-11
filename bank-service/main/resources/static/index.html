@@ -89,6 +89,28 @@
         .switch a:hover {
             text-decoration: underline;
         }
+
+        /* Новый стиль для иконки карты */
+        .card-icon {
+            margin-top: 20px;
+            padding: 20px;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            display: none; /* Скрыто до тех пор, пока данные не будут загружены */
+        }
+        .card-icon h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            color: #ff416c;
+        }
+        .card-icon p {
+            font-size: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -121,7 +143,16 @@
             <button type="button" onclick="createCard()">Create Card</button>
         </form>
     </div>
+
+    <!-- Новый контейнер для отображения информации о карточке -->
+    <div class="form-container" id="card-display-container">
+        <h2>Your Card</h2>
+        <div id="cardIcon" class="card-icon">Card Details Will Appear Here</div>
+        <button type="button" onclick="getCardByCartId()">Show Card</button>
+    </div>
 </div>
+
 <script src="app.js"></script>
 </body>
 </html>
+

@@ -7,6 +7,7 @@ import com.example.SoyBank.api.model.User;
 import com.example.SoyBank.api.repository.CardRepository;
 import com.example.SoyBank.api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,12 @@ import org.springframework.stereotype.Service;
 public class BankServiceImpl implements BankService {
     private CardRepository cardRepository;
     private UserRepository userRepository;
+
+    @Autowired
+    public BankServiceImpl(UserRepository userRepository, CardRepository cardRepository) {
+        this.userRepository = userRepository;
+        this.cardRepository = cardRepository;
+    }
 
     @Override
     public void create(CardDto cardDto) {
