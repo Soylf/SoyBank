@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  bank-server:
+    build: ./bank-server
+    image: bank_server_image
+    container_name: bank_server
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/SoyBank
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 28762876
+      SPRING_APPLICATION_NAME: SoyBank
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: SoyBank
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 28762876
+    ports:
+      - "5432:5432"
