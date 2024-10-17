@@ -15,9 +15,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>bank-service</module>
-		<module>user-service</module>
-		<module>model</module>
+		<module>bank-server</module>
 	</modules>
 
 	<properties>
